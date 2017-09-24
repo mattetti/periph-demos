@@ -1,0 +1,51 @@
+{
+  "Left": {
+    "Left": {
+      "Curve": "ease-in-out",
+      "Patterns": ["#ff0000", "#1f0f00", "#A9E8FD", "#FCD705"],
+      "ShowMS": 10,
+      "TransitionMS": 500,
+      "_type": "Loop"
+    },
+    "Right": {
+      "Curve": "ease-in-out",
+      "Patterns": [
+        "#ffffff",
+        "#000000",
+        "#FFEF15",
+        "#408A34",
+        "#000000",
+        "#ffffff",
+        "#801232",
+        "#000000",
+        "#0A2E8A",
+        "#0A2E8A"
+      ],
+      "ShowMS": 150,
+      "TransitionMS": 20,
+      "_type": "Loop"
+    },
+    "Offset": "50%",
+    "_type": "Split"
+  },
+  "Right": {
+    "Left": {
+      "Curve": "ease-in-out",
+      "Patterns": ["#ff0000", "#1f0f00", "#A9E8FD", "#FCD705"],
+      "ShowMS": 10,
+      "TransitionMS": 300,
+      "_type": "Loop"
+    },
+    "Right": {
+      "Curve": "ease-in-out",
+      "Patterns": ["#ff0000", "#000000", "#A9E8FD", "#408A34"],
+      "ShowMS": 10,
+      "TransitionMS": 400,
+      "_type": "Loop"
+    },
+    "Offset": "50%",
+    "_type": "Split"
+  },
+  "Offset": "50%",
+  "_type": "Split"
+}

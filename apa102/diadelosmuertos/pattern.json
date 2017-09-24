@@ -15,17 +15,18 @@
         "#FFEF15",
         "#408A34",
         "#000000",
-        "#ffffff",
         "#801232",
         "#000000",
         "#0A2E8A",
-        "#0A2E8A"
+        "#000000",
+        "#0A2E8A",
+        "#FFEF15"
       ],
       "ShowMS": 150,
-      "TransitionMS": 20,
+      "TransitionMS": 60,
       "_type": "Loop"
     },
-    "Offset": "50%",
+    "Offset": "40%",
     "_type": "Split"
   },
   "Right": {

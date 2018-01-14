@@ -15,36 +15,35 @@
         "#FFEF15",
         "#408A34",
         "#000000",
+        "#ffffff",
         "#801232",
         "#000000",
         "#0A2E8A",
-        "#000000",
-        "#0A2E8A",
-        "#FFEF15"
+        "#0A2E8A"
       ],
       "ShowMS": 150,
-      "TransitionMS": 60,
+      "TransitionMS": 20,
       "_type": "Loop"
     },
-    "Offset": "40%",
+    "Offset": "50%",
     "_type": "Split"
   },
   "Right": {
     "Left": {
       "Curve": "ease-in-out",
       "Patterns": ["#ff0000", "#1f0f00", "#A9E8FD", "#FCD705"],
-      "ShowMS": 10,
+      "ShowMS": 15,
       "TransitionMS": 300,
       "_type": "Loop"
     },
     "Right": {
       "Curve": "ease-in-out",
       "Patterns": ["#ff0000", "#000000", "#A9E8FD", "#408A34"],
-      "ShowMS": 10,
+      "ShowMS": 13,
       "TransitionMS": 400,
       "_type": "Loop"
     },
-    "Offset": "50%",
+    "Offset": "59%",
     "_type": "Split"
   },
   "Offset": "50%",

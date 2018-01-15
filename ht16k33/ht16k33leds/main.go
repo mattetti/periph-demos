@@ -67,18 +67,63 @@ func mainImpl() error {
 			if err := pad.WriteDisplay(); err != nil {
 				panic(err)
 			}
-			time.Sleep(100 * time.Millisecond)
+			time.Sleep(50 * time.Millisecond)
 		}
-		// time.Sleep(500 * time.Millisecond)
-		// for i := 15; i >= 0; i-- {
-		// 	pad.SetLED(i, false)
-		// 	if err := pad.WriteDisplay(); err != nil {
-		// 		panic(err)
-		// 	}
-		// 	time.Sleep(100 * time.Millisecond)
-		// }
+		time.Sleep(500 * time.Millisecond)
 	}
+	dev.ClearAll()
+
+	for {
+		if err := dev.ReadKeys(); err != nil {
+			log.Fatal(err)
+		}
+		changed := false
+		for i := 0; i < 16; i++ {
+			if dev.IsPressed(i) {
+				turnRow(dev, i, true)
+				changed = true
+			} else if dev.WasJustReleased(i) {
+				turnRow(dev, i, false)
+				changed = true
+			}
+		}
+		if changed {
+			dev.WriteDisplay()
+		}
+		time.Sleep(30 * time.Millisecond)
+	}
+
 	return nil
+}
+
+// turnRow turns the entire row of a specific button on or off.
+// WriteDisplay must be called to push the change to the device.
+func turnRow(dev *ht16k33.Dev, idx int, isOn bool) {
+	if idx < 4 {
+		dev.SetLED(0, isOn)
+		dev.SetLED(1, isOn)
+		dev.SetLED(2, isOn)
+		dev.SetLED(3, isOn)
+		return
+	}
+	if idx < 8 {
+		dev.SetLED(4, isOn)
+		dev.SetLED(5, isOn)
+		dev.SetLED(6, isOn)
+		dev.SetLED(7, isOn)
+		return
+	}
+	if idx < 12 {
+		dev.SetLED(8, isOn)
+		dev.SetLED(9, isOn)
+		dev.SetLED(10, isOn)
+		dev.SetLED(11, isOn)
+		return
+	}
+	dev.SetLED(12, isOn)
+	dev.SetLED(13, isOn)
+	dev.SetLED(14, isOn)
+	dev.SetLED(15, isOn)
 }
 
 func newDevice(i2cBus i2c.Bus, i2cAddr uint) (*ht16k33.Dev, error) {

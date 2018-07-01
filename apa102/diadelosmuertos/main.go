@@ -5,24 +5,34 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
 	"time"
 
-	"github.com/maruel/anim1d"
 	"periph.io/x/extra/devices/screen"
+
+	"periph.io/x/periph/conn/display"
+
+	"periph.io/x/periph/conn/physic"
+
+	"github.com/maruel/anim1d"
 	"periph.io/x/periph/conn/spi/spireg"
-	"periph.io/x/periph/devices"
 	"periph.io/x/periph/devices/apa102"
 	"periph.io/x/periph/host"
 )
+
+type DrawerWriter interface {
+	display.Drawer
+	io.Writer
+}
 
 func mainImpl() error {
 	verbose := flag.Bool("v", false, "verbose mode")
 	fake := flag.Bool("terminal", false, "print the animation at the terminal")
 	spiID := flag.String("spi", "", "SPI port to use")
-	hz := flag.Int("hz", 0, "SPI port speed")
+	hz := flag.Int64("hz", 0, "SPI port speed")
 	numPixels := flag.Int("n", 44, "number of pixels on the strip")
 	intensity := flag.Int("l", 127, "light intensity [1-255]")
 	temperature := flag.Int("t", 5000, "light temperature in °Kelvin [3500-7500]")
@@ -80,10 +90,9 @@ func mainImpl() error {
 		return errors.New("use one of -f or -r; try -r '\"0101ff\"'")
 	}
 
-	var display devices.Display
+	var display DrawerWriter
 	if *fake {
-		// intensity and temperature are ignored.
-		display = screen.New(*numPixels)
+		display = screen.New(int(*numPixels))
 	} else {
 		if _, err := host.Init(); err != nil {
 			return err
@@ -97,21 +106,22 @@ func mainImpl() error {
 		}
 		defer s.Close()
 		if *hz != 0 {
-			if err := s.LimitSpeed(int64(*hz)); err != nil {
+			if err := s.LimitSpeed(physic.Frequency(*hz)); err != nil {
 				return err
 			}
 		}
-		display, err = apa102.New(s, *numPixels, uint8(*intensity), uint16(*temperature))
+		opts := &apa102.Opts{NumPixels: *numPixels, Intensity: uint8(*intensity), Temperature: uint16(*temperature)}
+		display, err = apa102.New(s, opts)
 		if err != nil {
 			return err
 		}
+		defer display.Halt()
 	}
-	defer display.Halt()
 
 	return runLoop(display, pat.Pattern, *fps)
 }
 
-func runLoop(display devices.Display, p anim1d.Pattern, fps int) error {
+func runLoop(display DrawerWriter, p anim1d.Pattern, fps int) error {
 	delta := time.Second / time.Duration(fps)
 	numLights := display.Bounds().Dx()
 	buf := make([]byte, numLights*3)

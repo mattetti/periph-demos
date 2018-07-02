@@ -1,0 +1,10 @@
+[Unit]
+ Description=Dia de los Muertos calavera's LEDs
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/home/pi/diadelosmuertos -f /home/pi/pattern.json
+
+ [Install]
+ WantedBy=multi-user.target

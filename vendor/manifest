@@ -1,0 +1,188 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/maruel/anim1d",
+			"repository": "https://github.com/maruel/anim1d",
+			"vcs": "git",
+			"revision": "bfaf7b94fe4e5e3a21bd069f21bed2d577fe1353",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/maruel/ansi256",
+			"repository": "https://github.com/maruel/ansi256",
+			"vcs": "git",
+			"revision": "4092bbf0fcbc49c01c266c042b871aa3b9ba01e7",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/maruel/fastbezier",
+			"repository": "https://github.com/maruel/fastbezier",
+			"vcs": "git",
+			"revision": "8cc3e0363da2269aa4d9827e04e29a52718f581a",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mattn/go-colorable",
+			"repository": "https://github.com/mattn/go-colorable",
+			"vcs": "git",
+			"revision": "efa589957cd060542a26d2dd7832fd6a6c6c3ade",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mattn/go-isatty",
+			"repository": "https://github.com/mattn/go-isatty",
+			"vcs": "git",
+			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/image/font",
+			"repository": "https://go.googlesource.com/image",
+			"vcs": "git",
+			"revision": "cc896f830cedae125428bc9fe1b0362aa91b3fb1",
+			"branch": "master",
+			"path": "font",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/image/math/fixed",
+			"repository": "https://go.googlesource.com/image",
+			"vcs": "git",
+			"revision": "cc896f830cedae125428bc9fe1b0362aa91b3fb1",
+			"branch": "master",
+			"path": "math/fixed",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/sys/unix",
+			"repository": "https://go.googlesource.com/sys",
+			"vcs": "git",
+			"revision": "7138fd3d9dc8335c567ca206f4333fb75eb05d56",
+			"branch": "master",
+			"path": "/unix",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/encoding",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "encoding",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/internal/format",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "internal/format",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/internal/gen",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "internal/gen",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/internal/language",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "internal/language",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/internal/tag",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "internal/tag",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/internal/utf8internal",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "internal/utf8internal",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/language",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "language",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/runes",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "runes",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/transform",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "transform",
+			"notests": true
+		},
+		{
+			"importpath": "golang.org/x/text/unicode/cldr",
+			"repository": "https://go.googlesource.com/text",
+			"vcs": "git",
+			"revision": "c0fe8dde8a10c9b32154bd9bdf080b8b3d635127",
+			"branch": "master",
+			"path": "unicode/cldr",
+			"notests": true
+		},
+		{
+			"importpath": "periph.io/x/extra/devices/screen",
+			"repository": "https://github.com/periph/extra",
+			"vcs": "git",
+			"revision": "b512dc76dfd62e0ed0b94a1241403533fe90b75b",
+			"branch": "master",
+			"path": "/devices/screen",
+			"notests": true
+		},
+		{
+			"importpath": "periph.io/x/extra/hostextra",
+			"repository": "https://github.com/periph/extra",
+			"vcs": "git",
+			"revision": "b512dc76dfd62e0ed0b94a1241403533fe90b75b",
+			"branch": "master",
+			"path": "/hostextra",
+			"notests": true
+		},
+		{
+			"importpath": "periph.io/x/periph",
+			"repository": "https://github.com/google/periph",
+			"vcs": "git",
+			"revision": "1aedcdb58ecd268feeeabf544a687e37578a62c8",
+			"branch": "master",
+			"notests": true
+		}
+	]
+}

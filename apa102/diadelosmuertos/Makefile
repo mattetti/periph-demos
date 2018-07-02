@@ -1,3 +1,5 @@
+ip=192.168.86.52
+
 default: zero
 
 zero:
@@ -7,4 +9,6 @@ pi:
 	GOOS=linux GOARCH=arm go build .
 
 scp:
-	scp diadelosmuertos pi@192.168.86.223:~
+	scp diadelosmuertos pi@$(ip)~
+	scp pattern.json pi@$(ip):~
+	scp diadelosmuertos.service pi@$(ip):~
